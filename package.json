@@ -1,0 +1,24 @@
+{
+  "name": "gcs-block-layouts",
+  "version": "1.0.0",
+  "description": "Gutenberg Block Layouts",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "script",
+    "start": "wp-scripts start",
+    "build": "wp-scripts build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cguntur/gcs-block-layouts.git"
+  },
+  "author": "Chandrika Sista",
+  "license": " GPL-2.0-only",
+  "bugs": {
+    "url": "https://github.com/cguntur/gcs-block-layouts/issues"
+  },
+  "homepage": "https://github.com/cguntur/gcs-block-layouts#readme",
+  "devDependencies": {
+    "@wordpress/scripts": "12.6.1"
+  }
+}

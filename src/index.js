@@ -1,0 +1,1 @@
+import './blog_mag_layout/index.js';
