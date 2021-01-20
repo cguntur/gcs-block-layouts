@@ -25,8 +25,8 @@ import { SelectControl,
         withColors,
         PanelColorSettings,
         getColorClassName
-    } from '@wordpress/editor'
-    ;
+    } from '@wordpress/block-editor';
+
 import { withSelect, widthDispatch } from '@wordpress/data';
 import { withState } from '@wordpress/compose';
 
@@ -75,16 +75,62 @@ const edit = props => {
                         label = { __('Select a Post Type') }
                         value = {postType}
                         options = {postTypeOptions}
-                        //help = {__('Displays only the child categories of the selected parent category.')}
                         onChange={ ( nextValue ) =>
                             setAttributes( {postType:  nextValue } )
                         }
                     />
                 </PanelRow>
             </PanelBody>
+            <PanelBody title={ __( 'Display Options' )}>
+                <PanelRow>
+                    <ToggleControl
+                        label={ __( 'Display Author' ) }
+                        checked={ author }
+                        onChange={ ( nextValue ) =>
+                            setAttributes( { author:nextValue } )
+                        }
+                    />
+                </PanelRow>
+                <PanelRow>
+                    <ToggleControl
+                        label={ __( 'Display Date' ) }
+                        checked={ date }
+                        onChange={ ( nextValue ) =>
+                            setAttributes( { date:nextValue } )
+                        }
+                    />
+                </PanelRow>
+                <PanelRow>
+                    <ToggleControl
+                        label={ __( 'Display Categories' ) }
+                        checked={ displayCategories }
+                        onChange={ ( nextValue ) =>
+                            setAttributes( { displayCategories:nextValue } )
+                        }
+                    />
+                </PanelRow>
+                <PanelRow>
+                    <ToggleControl
+                        label={ __( 'Display Tags' ) }
+                        checked={ displayTags }
+                        onChange={ ( nextValue ) =>
+                            setAttributes( { displayTags:nextValue } )
+                        }
+                    />
+                </PanelRow>
+                <PanelRow>
+                    <ToggleControl
+                        label={ __( 'Display Featured Image' ) }
+                        checked={ postImage }
+                        onChange={ ( nextValue ) =>
+                            setAttributes( { postImage:nextValue } )
+                        }
+                    />
+                </PanelRow>
+            </PanelBody>
         </InspectorControls>
     );
-
+    
     return [
         <div className={ props.className }>
             <ServerSideRender
